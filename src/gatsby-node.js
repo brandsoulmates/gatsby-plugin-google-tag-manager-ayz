@@ -22,6 +22,11 @@ exports.pluginOptionsSchema = ({ Joi }) =>
       .description(
         `Include Google Tag Manager when running in development mode.`
       ),
+    sandbox: Joi.boolean()
+      .default(false)
+      .description(
+        `Include sandbox attribute in iframe.`
+      ),
     defaultDataLayer: Joi.alternatives()
       .try(Joi.object(), Joi.function())
       .default(null)
